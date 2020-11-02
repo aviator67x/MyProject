@@ -24,9 +24,9 @@ final class ScrollViewController: UIViewController {
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-//        scrollView.delegate = self
-//        scrollView.minimumZoomScale = 0.25
-//        scrollView.maximumZoomScale = 2
+          scrollView.delegate = self
+          scrollView.minimumZoomScale = 0.25
+          scrollView.maximumZoomScale = 2
         return scrollView
     }()
     
@@ -88,8 +88,8 @@ extension ScrollViewController {
 
 //MARK: - UIScrollViewDelegate
 
-//extension ScrollViewController: UIScrollViewDelegate {
-//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-//        return textLabel
-//    }
-//}
+  extension ScrollViewController: UIScrollViewDelegate {
+      func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+          return imageView
+      }
+  }

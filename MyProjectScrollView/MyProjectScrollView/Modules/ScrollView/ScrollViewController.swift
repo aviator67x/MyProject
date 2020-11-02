@@ -24,20 +24,40 @@ final class ScrollViewController: UIViewController {
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.delegate = self
-        scrollView.minimumZoomScale = 0.25
-        scrollView.maximumZoomScale = 2
+//        scrollView.delegate = self
+//        scrollView.minimumZoomScale = 0.25
+//        scrollView.maximumZoomScale = 2
         return scrollView
     }()
     
-    private lazy var textLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = """
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at condimentum sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam a est est. Pellentesque varius turpis blandit tempor suscipit. Maecenas at lectus feugiat, imperdiet augue nec, ornare turpis. Vivamus at justo id enim suscipit molestie sit amet sed nisl. Cras ullamcorper tincidunt risus, id accumsan lectus dignissim ut. In vitae consequat turpis, vel mattis dui. Sed eu eleifend augue.
-        """
-        return label
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = myImage
+        return imageView
     }()
+    
+    let myImage = UIImage(named: "Timoty")
+
+//    let imageView = UIImageView()
+//    imageView.contentMode = UIView.ContentMode.scaleAspectFit
+//    myImageView.frame.size.width = 200
+//    myImageView.frame.size.height = 200
+//    myImageView.center = self.view.center
+//    let myImage = UIImage(named: "Timoty")
+//    imageView.image = myImage
+    
+ 
+    
+  
+
+//    private lazy var textLabel: UILabel = {
+//        let label = UILabel()
+//        label.numberOfLines = 0
+//        label.text = """
+//        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at condimentum sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam a est est. Pellentesque varius turpis blandit tempor suscipit. Maecenas at lectus feugiat, imperdiet augue nec, ornare turpis. Vivamus at justo id enim suscipit molestie sit amet sed nisl. Cras ullamcorper tincidunt risus, id accumsan lectus dignissim ut. In vitae consequat turpis, vel mattis dui. Sed eu eleifend augue.
+//        """
+//        return label
+//    }()
     
     let containerView = UIView()
 }
@@ -54,16 +74,22 @@ extension ScrollViewController {
             $0.top.bottom.leading.trailing.centerX.equalToSuperview()
         }
         
-        containerView.addSubview(textLabel) {
+        containerView.addSubview(imageView) {
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
+        
+    
+        
+//        containerView.addSubview(textLabel) {
+//            $0.top.bottom.leading.trailing.equalToSuperview()
+//        }
     }
 }
 
 //MARK: - UIScrollViewDelegate
 
-extension ScrollViewController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return textLabel
-    }
-}
+//extension ScrollViewController: UIScrollViewDelegate {
+//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+//        return textLabel
+//    }
+//}

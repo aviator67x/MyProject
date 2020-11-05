@@ -123,9 +123,9 @@
 		296BB552254F1271009A2391 /* MyProjectScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				2927A036254F23A80025434F /* App */,
 				2927A039254F241C0025434F /* Modules */,
 				2927A038254F23CF0025434F /* Resourses */,
-				2927A036254F23A80025434F /* App */,
 				2927A035254F238C0025434F /* Extensions */,
 			);
 			path = MyProjectScrollView;

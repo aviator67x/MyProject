@@ -19,14 +19,18 @@ final class ScrollViewController: UIViewController {
         view.backgroundColor = .white
         
         setupViews()
+      
     }
     //    MARK: - Views
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-          scrollView.delegate = self
-          scrollView.minimumZoomScale = 0.25
-          scrollView.maximumZoomScale = 2
+//          scrollView.delegate = self
+//          scrollView.minimumZoomScale = 0.25
+//          scrollView.maximumZoomScale = 2
+//        scrollView.contentSize.width = 50000
+       
+         
         return scrollView
     }()
     
@@ -37,19 +41,7 @@ final class ScrollViewController: UIViewController {
     }()
     
     let myImage = UIImage(named: "Timoty")
-
-//    let imageView = UIImageView()
-//    imageView.contentMode = UIView.ContentMode.scaleAspectFit
-//    myImageView.frame.size.width = 200
-//    myImageView.frame.size.height = 200
-//    myImageView.center = self.view.center
-//    let myImage = UIImage(named: "Timoty")
-//    imageView.image = myImage
     
- 
-    
-  
-
 //    private lazy var textLabel: UILabel = {
 //        let label = UILabel()
 //        label.numberOfLines = 0
@@ -60,6 +52,7 @@ final class ScrollViewController: UIViewController {
 //    }()
     
     let containerView = UIView()
+
 }
 
 //MARK: - Setup Views
@@ -71,25 +64,34 @@ extension ScrollViewController {
         }
         
         scrollView.addSubview(containerView) {
-            $0.top.bottom.leading.trailing.centerX.equalToSuperview()
-        }
-        
-        containerView.addSubview(imageView) {
             $0.top.bottom.leading.trailing.equalToSuperview()
+//             $0.height.equalTo(300)
+//             $0.width.equalTo(1500)
         }
         
-    
-        
+        containerView.addSubview(imageView)
+          {
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(1700)
+            $0.width.equalTo(1500)
+          }
+            
 //        containerView.addSubview(textLabel) {
 //            $0.top.bottom.leading.trailing.equalToSuperview()
 //        }
     }
+   
 }
 
 //MARK: - UIScrollViewDelegate
 
-  extension ScrollViewController: UIScrollViewDelegate {
-      func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-          return imageView
-      }
-  }
+//  extension ScrollViewController: UIScrollViewDelegate {
+//      func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+//          return imageView
+//      }
+//  }
+//MARK: - Scrolling Content
+
